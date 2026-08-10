@@ -23,7 +23,7 @@ func NewScheduler(process func(), nextExecution func() time.Time) *Scheduler {
 	}
 }
 
-func (s *Scheduler) start() {
+func (s *Scheduler) Start() {
 	for {
 		next := s.nextExecution()
 		timer := time.NewTimer(time.Until(next))
@@ -45,7 +45,7 @@ func (s *Scheduler) start() {
 	}
 }
 
-func (s *Scheduler) stop() {
+func (s *Scheduler) Stop() {
 	close(s.stopCh)
 	s.wg.Wait()
 }
