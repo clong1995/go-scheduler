@@ -25,7 +25,7 @@ func TestTes(t *testing.T) {
 					return time.Date(now.Year(), now.Month(), now.Day(), now.Hour(), now.Minute(), now.Second()+5, 0, now.Location())
 				},
 			)
-			go sched.start()
+			go sched.Start()
 		})
 	}
 
